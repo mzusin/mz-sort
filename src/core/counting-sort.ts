@@ -22,7 +22,11 @@
  * But, it is bad if the integers are very large
  * because the array of that size should be made.
  */
-export const countingSort = (values: number[], isAsc = true) : number[] => {
+export const countingSort = (
+    values: number[],
+    isAsc = true,
+    getIndex?: (_values: number[], _i: number) => number) : number[] => {
+
     const size = values.length;
 
     const output = []; // of (size + 1) length
@@ -33,7 +37,9 @@ export const countingSort = (values: number[], isAsc = true) : number[] => {
     const map = new Map();
     for (let i = 0; i < size; i++) {
         const curr = map.get(values[i]) ?? 0;
-        map.set(values[i], curr + 1);
+
+        const index = getIndex === undefined ? values[i] : getIndex(values, i);
+        map.set(index, curr + 1);
     }
 
     // 2. Store the cumulative count of each array
@@ -46,10 +52,10 @@ export const countingSort = (values: number[], isAsc = true) : number[] => {
     // 3. Find the index of each element of the original array in count array;
     // place the elements in output array
     for (let i = size - 1; i >= 0; i--) {
-        const val = values[i];
-        const curr = map.get(val);
-        output[curr - 1] = val;
-        map.set(val, curr - 1);
+        const index = getIndex === undefined ? values[i] : getIndex(values, i);
+        const curr = map.get(index);
+        output[curr - 1] = index;
+        map.set(index, curr - 1);
     }
 
     // Copy the sorted elements into original array
