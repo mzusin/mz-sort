@@ -1,5 +1,8 @@
 import { countingSort } from './counting-sort';
 
+// TODO: handle negative numbers
+// TODO: handle desc order
+
 /**
  * Radix sort is a sorting algorithm that sorts the elements
  * by first grouping the individual digits of the same place value.
@@ -23,15 +26,22 @@ import { countingSort } from './counting-sort';
  * This is the reason why this sort is not used in software libraries.
  */
 export const radixSort = (values: number[], isAsc = true) : number[] => {
+    if(values.length <= 1) return values;
 
     const max = Math.max(...values);
 
     // Apply counting sort to sort elements based on place value.
-    for (let place = 1; max / place > 0; place *= 10) {
-        countingSort(values, isAsc, (_values: number[], _i: number) => {
-            return (_values[_i] / place) % 10;
+    for (let place = 1; Math.floor(max / place) > 0; place *= 10) {
+
+        countingSort(values, isAsc, (_val: number) => {
+            return (_val / place) % 10;
         });
     }
 
     return values;
 };
+
+/*
+export const mod = (n: number, m: number) => {
+    return ((n % m) + m) % m;
+};*/

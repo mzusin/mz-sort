@@ -25,7 +25,7 @@
 export const countingSort = (
     values: number[],
     isAsc = true,
-    getIndex?: (_values: number[], _i: number) => number) : number[] => {
+    getIndex?: (_val: number) => number) : number[] => {
 
     const size = values.length;
 
@@ -38,7 +38,7 @@ export const countingSort = (
     for (let i = 0; i < size; i++) {
         const curr = map.get(values[i]) ?? 0;
 
-        const index = getIndex === undefined ? values[i] : getIndex(values, i);
+        const index = getIndex === undefined ? values[i] : getIndex(values[i]);
         map.set(index, curr + 1);
     }
 
@@ -52,7 +52,7 @@ export const countingSort = (
     // 3. Find the index of each element of the original array in count array;
     // place the elements in output array
     for (let i = size - 1; i >= 0; i--) {
-        const index = getIndex === undefined ? values[i] : getIndex(values, i);
+        const index = getIndex === undefined ? values[i] : getIndex(values[i]);
         const curr = map.get(index);
         output[curr - 1] = index;
         map.set(index, curr - 1);
