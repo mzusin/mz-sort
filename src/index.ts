@@ -3,6 +3,7 @@ import { selectionSort } from './core/selection-sort';
 import { insertionSort } from './core/insertion-sort';
 import { mergeSort } from './core/merge-sort';
 import { quickSort } from './core/quick-sort';
+import { countingSort } from './core/counting-sort';
 
 const api = {
     bubbleSort,
@@ -10,6 +11,7 @@ const api = {
     insertionSort,
     mergeSort,
     quickSort,
+    countingSort,
 };
 
 declare global {
@@ -25,3 +27,4 @@ export * from './core/selection-sort';
 export * from './core/insertion-sort';
 export * from './core/merge-sort';
 export * from './core/quick-sort';
+export * from './core/counting-sort';
