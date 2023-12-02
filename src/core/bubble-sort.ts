@@ -2,6 +2,16 @@
  * Bubble sort is a sorting algorithm that compares two adjacent elements
  * and swaps them until they are in the intended order.
  * https://www.youtube.com/watch?v=Iv3vgjM8Pv4
+ * Time Complexity
+ * ---------------
+ * Best    O(n)
+ * Worst    O(n^2)
+ * Average    O(n^2)
+ * ---------------
+ * Space Complexity    O(1)
+ * Stability    Yes
+ * ---------------
+ * Number of comparisons is (n-1) + (n-2) + (n-3) +.....+ 1 = n(n-1)/2
  */
 export const bubbleSort = (values: number[], isAsc = true) : number[] => {
     // N = 6:
