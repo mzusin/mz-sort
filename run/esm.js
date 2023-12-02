@@ -7,7 +7,7 @@ const watch = args.length > 1 && args[1].trim().toLowerCase() === 'watch';
 settings.platform = 'neutral';
 settings.format = 'esm';
 settings.entryPoints = ['./src/index-esm.ts'];
-settings.outfile = './dist/mz-hsort.esm.js';
+settings.outfile = './dist/mz-sort.esm.js';
 
 if(watch){
     // ------------- watch ---------------

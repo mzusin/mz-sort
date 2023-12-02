@@ -1,23 +1,23 @@
-import { heapsort } from '../src/core/heap-sort';
+import { bubbleSort } from '../src/core/bubble-sort';
 
-describe('heapsort asc', () => {
+describe('bubbleSort asc', () => {
     it('should sort an array of numbers in ascending order', () => {
         const inputArray = [12, 11, 13, 5, 6, 7];
         const expectedOutput = [5, 6, 7, 11, 12, 13];
 
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual(expectedOutput);
     });
 
     it('should handle an empty array', () => {
         const inputArray: number[] = [];
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual([]);
     });
 
     it('should handle an array with one element', () => {
         const inputArray = [42];
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual([42]);
     });
 
@@ -25,7 +25,7 @@ describe('heapsort asc', () => {
         const inputArray = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
         const expectedOutput = [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9];
 
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -33,7 +33,7 @@ describe('heapsort asc', () => {
         const inputArray = [-5, -2, -8, -1, -3];
         const expectedOutput = [-8, -5, -3, -2, -1];
 
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -41,7 +41,7 @@ describe('heapsort asc', () => {
         const inputArray = [12, 11, 13, 5, 6, 7];
         const expectedOutput = [5, 6, 7, 11, 12, 13];
 
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -49,7 +49,7 @@ describe('heapsort asc', () => {
         const inputArray = [9, 7, 5, 4, 3, 1];
         const expectedOutput = [1, 3, 4, 5, 7, 9];
 
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -57,7 +57,7 @@ describe('heapsort asc', () => {
         const inputArray = [8, 8, 8, 8, 8];
         const expectedOutput = [8, 8, 8, 8, 8];
 
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -65,29 +65,29 @@ describe('heapsort asc', () => {
         const inputArray = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 1000));
         const sortedArray = [...inputArray].sort((a, b) => a - b);
 
-        heapsort(inputArray);
+        bubbleSort(inputArray);
         expect(inputArray).toEqual(sortedArray);
     });
 });
 
-describe('heapsort desc', () => {
+describe('bubbleSort desc', () => {
     it('should sort an array of numbers in descending order', () => {
         const inputArray = [12, 11, 13, 5, 6, 7];
         const expectedOutput = [13, 12, 11, 7, 6, 5];
 
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual(expectedOutput);
     });
 
     it('should handle an empty array', () => {
         const inputArray: number[] = [];
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual([]);
     });
 
     it('should handle an array with one element', () => {
         const inputArray = [42];
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual([42]);
     });
 
@@ -95,7 +95,7 @@ describe('heapsort desc', () => {
         const inputArray = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
         const expectedOutput = [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1];
 
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -103,7 +103,7 @@ describe('heapsort desc', () => {
         const inputArray = [-5, -2, -8, -1, -3];
         const expectedOutput = [-1, -2, -3, -5, -8];
 
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -111,7 +111,7 @@ describe('heapsort desc', () => {
         const inputArray = [12, 11, 13, 5, 6, 7];
         const expectedOutput = [13, 12, 11, 7, 6, 5];
 
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -119,7 +119,7 @@ describe('heapsort desc', () => {
         const inputArray = [9, 7, 5, 4, 3, 1];
         const expectedOutput = [9, 7, 5, 4, 3, 1];
 
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -127,7 +127,7 @@ describe('heapsort desc', () => {
         const inputArray = [8, 8, 8, 8, 8];
         const expectedOutput = [8, 8, 8, 8, 8];
 
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual(expectedOutput);
     });
 
@@ -135,7 +135,7 @@ describe('heapsort desc', () => {
         const inputArray = Array.from({ length: 1000 }, () => Math.floor(Math.random() * 1000));
         const sortedArray = [...inputArray].sort((a, b) => b - a);
 
-        heapsort(inputArray, false);
+        bubbleSort(inputArray, false);
         expect(inputArray).toEqual(sortedArray);
     });
 });

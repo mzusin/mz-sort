@@ -1,8 +1,8 @@
-import { aaa } from './core/main';
+import { bubbleSort } from './core/bubble-sort';
 
 
 const api = {
-    aaa,
+    bubbleSort,
 };
 
 declare global {
@@ -13,4 +13,4 @@ declare global {
 
 window.mzSort = window.mzSort || api;
 
-export * from './core/main';
+export * from './core/bubble-sort';
