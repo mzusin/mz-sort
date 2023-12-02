@@ -2,6 +2,7 @@ import { countingSort } from './counting-sort';
 
 // TODO: handle negative numbers
 // TODO: handle desc order
+// TODO: fix issue that it doesn't work for relatively big numbers (even for 42)
 
 /**
  * Radix sort is a sorting algorithm that sorts the elements

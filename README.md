@@ -10,4 +10,5 @@ export const mergeSort: (values: number[], isAsc?: boolean) => number[];
 export const quickSort: (values: number[], isAsc?: boolean) => number[];
 export const countingSort: (values: number[], isAsc?: boolean) => number[];
 export const radixSort: (values: number[], isAsc?: boolean) => number[];
+export const bucketSort: (values: number[], bucketsNumber: number, isAsc?: boolean) => number[];
 ```
