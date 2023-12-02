@@ -29,7 +29,6 @@ export const countingSort = (values: number[], isAsc = true) : number[] => {
     const min = Math.min(...values);
     const max = Math.max(...values);
 
-    console.log(isAsc);
     // 1. Store the count of each element
     const map = new Map();
     for (let i = 0; i < size; i++) {
@@ -54,8 +53,15 @@ export const countingSort = (values: number[], isAsc = true) : number[] => {
     }
 
     // Copy the sorted elements into original array
-    for (let i = 0; i < size; i++) {
-        values[i] = output[i];
+    if(isAsc) {
+        for (let i = 0; i < size; i++) {
+            values[i] = output[i];
+        }
+    }
+    else{
+        for (let i = 0; i < size; i++) {
+            values[size - i - 1] = output[i];
+        }
     }
 
     return values;
